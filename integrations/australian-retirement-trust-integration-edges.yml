@@ -1,0 +1,64 @@
+generated: '2026-10-22'
+method: searched
+source:
+- https://zapier.com/apps/australian-retirement-trust/integrations
+- https://n8n.io/integrations/australian-retirement-trust/
+- https://composio.dev/toolkits/australian-retirement-trust
+- https://monid.ai/tools/australian-retirement-trust
+checked:
+- https://www.australianretirementtrust.com.au/employers/clearing-house
+- https://www.australianretirementtrust.com.au/employers/pay-super-online/clearing-house
+- https://cdne.australianretirementtrust.com.au/media/project/art/publicweb/pdfs/employer/how-to-use-clearing-house.pdf
+- https://composio.dev/toolkits/australian-retirement-trust
+- https://monid.ai/tools/australian-retirement-trust
+- https://n8n.io/integrations/australian-retirement-trust/
+- https://zapier.com/apps/australian-retirement-trust/integrations
+- https://data.gov.au/data/dataset/asic-afs-licensee
+- https://data.gov.au/data/dataset/asic-credit-licensee
+- https://www.apra.gov.au/register-of-authorised-deposit-taking-institutions
+- https://www.apra.gov.au/registers/list-registered-general-insurers
+summary: null
+marketplace_apps: []
+edges:
+- partner_name: ASIC Australian Financial Services licensees
+  partner: null
+  partner_match: register-name
+  type: register
+  channel: regulator-register
+  relationship: standard-participant
+  direction: partner-built
+  evidence: https://data.gov.au/data/dataset/ab7eddce-84df-4098-bc8f-500d0d9776d1/resource/d98a113d-6b50-40e6-b65f-2612efc877f4/download/afs_lic_202610.csv
+  category: Australian financial services licence (ASIC)
+  contract_reference:
+    register: ASIC Australian Financial Services licensees
+    spec_file: null
+    standard: null
+    role: afs-licensee
+    registrations:
+    - registered_name: AUSTRALIAN RETIREMENT TRUST PTY LTD
+      licences:
+      - AFS licence
+      - superannuation
+      register_country: AU
+      matched_domain: null
+      matched_by: register-name
+      register_id: AFSL 228975
+      abn_acn: '88010720840'
+      state: QLD
+      start: 01/07/2003
+      register_name_note: 'register-name ''australianretirementtrust'' = australian-retirement-trust; no wikidata
+        P856; AU presence: Australia tag'
+    signal_note: 'participation only: a regulator licence / authorisation listing; no API conformance is published
+      by this register'
+    detected_by: sweep-australia-afs-adi-registers.py
+    detected: '2026-10-22'
+    matched_by: register-name
+    identity_source: register-name
+    identity_note: register gave only the name; exact normalised match to the repo's apis.yml name, one repo, Wikidata
+      P856 not contradicting (Kin 2026-10-20 decision 2)
+  detected_by: sweep-australia-afs-adi-registers.py
+  first_seen: '2026-10-22'
+templates: []
+note: No integration marketplace listing, partner page or API contract found. Employer contributions run through
+  ART's Employer Online portal and clearing house (file upload, BPAY/EFT) per the provider's PDF guides; deeper
+  site pages returned an Incapsula "Pardon Our Interruption" bot challenge to automated reads (2026-10-22).
