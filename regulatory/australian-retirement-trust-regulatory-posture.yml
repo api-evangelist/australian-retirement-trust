@@ -1,0 +1,74 @@
+generated: '2026-10-22'
+method: searched
+probe: true
+source: https://www.australianretirementtrust.com.au/disclaimers-and-disclosures/privacy-policy
+fetch_note: >-
+  www.australianretirementtrust.com.au answers a plain GET with an Imperva-style "Pardon Our Interruption"
+  bot challenge (HTTP 200, 6183 bytes). The privacy policy was read through a headless-browser render
+  (fetch-url.py --render), which returned the page (title "Privacy Policy | Australian Retirement Trust",
+  22,842 chars of text) but did not report an HTTP status, so http_status is null below. The same render
+  returned no text for /disclaimers-and-disclosures and /disclaimers-and-disclosures/cookie-policy on two
+  attempts, so those pages were NOT read and no signal here comes from them.
+signals:
+  data_subject_request:
+    url: https://www.australianretirementtrust.com.au/disclaimers-and-disclosures/privacy-policy
+    section: '7. Accessing and changing your information'
+    channel: 'Call 13 11 84; online contact form; mail to Privacy Enquiries and Complaints, Australian Retirement Trust Pty Ltd, GPO Box 2924, Brisbane QLD 4001'
+    stated_sla: 'generally within 45 days'
+    rights_named: [access, correction, opt-out of direct marketing, complaint]
+    escalation: Australian Financial Complaints Authority (AFCA); Office of the Australian Information Commissioner (OAIC)
+    evidence:
+    - source: https://www.australianretirementtrust.com.au/disclaimers-and-disclosures/privacy-policy
+      http_status: null
+      fetched: '2026-10-22'
+      quote: 'You may request access to any of the personal information we hold about you by contacting us as set out in section 8. We will provide you with access to your personal information in accordance with the Privacy Act.'
+    - source: https://www.australianretirementtrust.com.au/disclaimers-and-disclosures/privacy-policy
+      http_status: null
+      fetched: '2026-10-22'
+      quote: 'If the information we hold about you is incorrect, incomplete or out-of-date, please let us know by contacting us as set out in section 8 so that we may update this.'
+    - source: https://www.australianretirementtrust.com.au/disclaimers-and-disclosures/privacy-policy
+      http_status: null
+      fetched: '2026-10-22'
+      quote: 'If you make a privacy complaint, we will endeavour to investigate, respond, and resolve the issue within a reasonable timeframe, which is generally within 45 days. If we have not responded within this timeframe, or you are not happy with our response, you can refer your complaint to the Australian Financial Complaints Authority (AFCA).'
+    note: >-
+      Australian Privacy Act rights of access and correction, with a published channel and a 45-day target
+      stated for privacy complaints (the 45 days attaches to complaints, not explicitly to access requests).
+      No deletion or portability right is named on the page.
+  incident_notification:
+    url: https://www.australianretirementtrust.com.au/disclaimers-and-disclosures/privacy-policy
+    section: '6.1 Notifiable data breaches'
+    evidence:
+    - source: https://www.australianretirementtrust.com.au/disclaimers-and-disclosures/privacy-policy
+      http_status: null
+      fetched: '2026-10-22'
+      quote: 'We must notify the Office of the Australian Information Commissioner (OAIC) and affected individuals if we become aware that there are reasonable grounds to suspect an eligible data breach has occurred.'
+    note: >-
+      Commits to the Notifiable Data Breaches scheme (notify the OAIC and affected individuals). No time
+      period for notification is stated.
+  data_residency:
+    url: https://www.australianretirementtrust.com.au/disclaimers-and-disclosures/privacy-policy
+    section: '4.1 Sharing personal information overseas'
+    countries_named: [United States, Ireland, Canada, United Kingdom, India, Netherlands, France, New Zealand, Malaysia, Singapore, Philippines]
+    evidence:
+    - source: https://www.australianretirementtrust.com.au/disclaimers-and-disclosures/privacy-policy
+      http_status: null
+      fetched: '2026-10-22'
+      quote: 'Due to the nature of our business operations, entities we disclose your personal information to may be located or have operations overseas. Some countries in which these entities may be located include the United States, Ireland, Canada, the United Kingdom, India, the Netherlands, France, New Zealand, Malaysia, Singapore, Philippines and other countries in the European Union and Asia Pacific regions.'
+    - source: https://www.australianretirementtrust.com.au/disclaimers-and-disclosures/privacy-policy
+      http_status: null
+      fetched: '2026-10-22'
+      quote: 'Your personal information may be held on-site at our offices, in secure premises, or in secure information systems (including in the cloud) operated by us or our service providers.'
+    note: >-
+      A disclosure that data may leave Australia, naming the countries; this is NOT a residency commitment —
+      no in-country storage guarantee is made.
+  subprocessors:
+    url: https://www.australianretirementtrust.com.au/disclaimers-and-disclosures/privacy-policy
+    list_published: false
+    evidence:
+    - source: https://www.australianretirementtrust.com.au/disclaimers-and-disclosures/privacy-policy
+      http_status: null
+      fetched: '2026-10-22'
+      quote: 'Our service providers and advisers (e.g. our insurers, IT services and support, mail and electronic mail service providers, professional advisers, research and data analysis services, auditors)'
+    note: >-
+      Only CATEGORIES of recipients are disclosed (service providers, direct-marketing providers, Rewards
+      Program vendors, regulators, government agencies); no named subprocessor list was found.

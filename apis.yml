@@ -1,23 +1,87 @@
 aid: australian-retirement-trust
+
 name: Australian Retirement Trust
-description: 'Australian Retirement Trust is a company surfaced via the API Evangelist harvest backlog
-  (source: australia-apidays-2026) and added to the network as a stub for full-pipeline profiling.'
+
+description: 'Australian Retirement Trust (ART, ABN 60 905 115 063) is an Australian superannuation fund that says
+  it puts its 2.4 million members first with long-term investment performance, lower fees and retirement support.
+  It offers super and retirement products, financial advice, the Member Online portal and the ART mobile app,
+  and it also administers QSuper accounts. Its public website (art.com.au redirects to australianretirementtrust.com.au)
+  publishes no developer portal or public API documentation. The profile was surfaced via the API Evangelist
+  harvest backlog (source: australia-apidays-2026).'
+
 url: https://raw.githubusercontent.com/api-evangelist/australian-retirement-trust/refs/heads/main/apis.yml
+
+image: https://cdne.australianretirementtrust.com.au/media/project/art/publicweb/logos/art_logo.jpg?h=1080&iar=0&w=1080
+
 x-type: company
+
 x-source: harvest:australia-apidays-2026
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-10-22 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-10-22'
+
 modified: '2026-10-22'
+
 tags:
 - Company
-apis: []
+- Superannuation
+- Retirement
+- Financial Services
+- Investments
+- Australia
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Hosts
+  url: hosts/australian-retirement-trust-hosts.yml
+- type: DomainSecurity
+  url: security/australian-retirement-trust-domain-security.yml
 - type: Website
-  url: https://art.com.au/
+  url: https://www.australianretirementtrust.com.au/
+- type: Support
+  url: https://www.australianretirementtrust.com.au/contact-us
+- type: News
+  url: https://www.australianretirementtrust.com.au/media-releases
+- type: PrivacyPolicy
+  url: https://www.australianretirementtrust.com.au/disclaimers-and-disclosures/privacy-policy
+- type: Disclaimer
+  url: https://www.australianretirementtrust.com.au/disclaimers-and-disclosures
+- type: LinkedIn
+  url: https://www.linkedin.com/company/australian-retirement-trust
+
+apis: []
+
+x-coverage:
+  state: covered
+  reason: identity-verified
+  detail: art.com.au redirects to www.australianretirementtrust.com.au, whose pages name Australian Retirement Trust
+    (ABN 60 905 115 063). No developer portal, API docs, terms-of-service, blog or GitHub page found on the site;
+    deeper pages and sitemap.xml returned an Incapsula/Distil "Pardon Our Interruption" challenge after a few requests.
+  evidence:
+  - url: https://art.com.au/
+    status: 200
+  - url: https://www.australianretirementtrust.com.au/
+    status: 200
+  - url: https://www.australianretirementtrust.com.au/contact-us
+    status: 200
+  - url: https://www.australianretirementtrust.com.au/media-releases
+    status: 200
+  - url: https://www.australianretirementtrust.com.au/disclaimers-and-disclosures/privacy-policy
+    status: 200
+  - url: https://www.australianretirementtrust.com.au/disclaimers-and-disclosures
+    status: 200
+x-enrichment:
+  date: '2026-10-22'
+  status: enriched
+  artifacts_added: 9
+  pass: modular-v1
+  engine: identity=anthropic,contract=anthropic,surfaces=anthropic,docs=anthropic,regulatory=anthropic

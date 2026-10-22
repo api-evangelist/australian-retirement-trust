@@ -1,0 +1,21 @@
+type: MCPServer
+name: Australian Retirement Trust MCP Server
+generated: '2026-10-22'
+method: none
+status: none
+description: >-
+  No official Australian Retirement Trust MCP server (remote or local) was found, and no candidate tool list
+  could be derived because the provider publishes no OpenAPI or other API contract. Checked: /llms.txt on
+  www.australianretirementtrust.com.au and art.com.au (both 404), pre-flight contract discovery on art.com.au and
+  www.australianretirementtrust.com.au (openapi/asyncapi/graphql/mcp all absent), and a web search for an
+  Australian Retirement Trust MCP server or developer API (no results naming the fund).
+checked:
+- url: https://www.australianretirementtrust.com.au/llms.txt
+  status: 404
+- url: https://art.com.au/llms.txt
+  status: 404
+tools: []
+deployment:
+  mode: none
+  auth: unknown
+  verified: searched
